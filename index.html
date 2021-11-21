@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusicStudio</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <img src="theTools/logo.png" class="logo">
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">SOBRE</a></li>
+                <li><a href="#">ESPECIFICAÇÕES</a></li>
+                <li><a href="#">PRODUTOS</a></li>
+                <li><a href="#">CONTATO</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="left-col">
+                <h1>O <br>SOM</br> DE VERDADE</h1>
+            </div>
+            <div class="right-col">
+                <p>Clique aqui para ouvir</p>
+                <img src="theTools/play.png" id="icon">
+            </div>
+        </div>
+
+    </div>
+
+    <audio id="mySong">
+        <source src="theTools/song.mp3" type="audio/mp3">
+    </audio>
+
+    <script>
+        var mySong = document.getElementById("mySong");
+        var icon = document.getElementById("icon");
+
+        icon.onclick = function () {
+            if (mySong.paused) {
+                mySong.play();
+                icon.src = "theTools/pause.png"
+            } else {
+                mySong.pause();
+                icon.src = "theTools/play.png";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
